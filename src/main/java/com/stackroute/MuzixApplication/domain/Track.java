@@ -17,6 +17,7 @@ import javax.persistence.Id;
 public class Track {
     @ApiModelProperty(value = "ID of the track")
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int trackId;
     @ApiModelProperty(value = "Name of the track")
     private String trackName;

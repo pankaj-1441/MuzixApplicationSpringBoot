@@ -6,19 +6,18 @@ import com.stackroute.MuzixApplication.exceptions.TrackNotFoundException;
 import com.stackroute.MuzixApplication.repository.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-//@Qualifier("trackService")
-@Primary
+
+//@Qualifier("dummyTrackService")
 @Service
-//@Profile({"trackService","default"})
-public class TrackServicesImpl implements TrackServices {
-   private TrackRepository trackRepository;
+//@Profile("dummyTrackService")
+public class TrackDummyServiceImpl implements TrackServices{
+    private TrackRepository trackRepository;
     @Autowired
-    public TrackServicesImpl(TrackRepository trackRepository) {
+    public TrackDummyServiceImpl(TrackRepository trackRepository) {
         this.trackRepository = trackRepository;
     }
 
@@ -40,7 +39,7 @@ public class TrackServicesImpl implements TrackServices {
     }
 
     @Override
-    public Track updateTrackComment(Track track) throws TrackNotFoundException{
+    public Track updateTrackComment(Track track) throws TrackNotFoundException {
         if(!trackRepository.existsById(track.getTrackId())){
             throw new TrackNotFoundException("Track not found to be deleted");
         }

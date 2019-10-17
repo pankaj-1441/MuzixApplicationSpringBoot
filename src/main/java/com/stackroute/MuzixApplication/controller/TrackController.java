@@ -6,16 +6,18 @@ import com.stackroute.MuzixApplication.exceptions.TrackNotFoundException;
 import com.stackroute.MuzixApplication.service.TrackServices;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 
 @RestController
 @RequestMapping(value="/api/v1")
 public class TrackController {
     @Autowired
+    //@Qualifier("dummyTrackService")
     private TrackServices trackServices;
 
     public TrackController(TrackServices trackServices) {
