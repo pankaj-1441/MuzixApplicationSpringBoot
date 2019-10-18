@@ -19,6 +19,7 @@ public class ApplicationRunnerHandlerImpl implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Track track=new Track();
+        track.setTrackId(2);
         track.setTrackName(env.getProperty("Track.trackName"));
         track.setTrackComments(env.getProperty("Track.trackComments"));
 

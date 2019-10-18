@@ -44,7 +44,7 @@ public class TrackServicesImpl implements TrackServices {
         if(!trackRepository.existsById(track.getTrackId())){
             throw new TrackNotFoundException("Track not found to be deleted");
         }
-        Track tracktoUpdate=trackRepository.getOne(track.getTrackId());
+        Track tracktoUpdate=trackRepository.findById(track.getTrackId()).get();
         tracktoUpdate.setTrackComments(track.getTrackComments());
         trackRepository.save(tracktoUpdate);
         return tracktoUpdate;

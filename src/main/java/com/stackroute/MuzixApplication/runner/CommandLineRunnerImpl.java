@@ -13,6 +13,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Track track=new Track();
+        track.setTrackId(1);
         track.setTrackName("CommandLineRunner");
         track.setTrackComments("Gnererated by CommandLineRunner");
 

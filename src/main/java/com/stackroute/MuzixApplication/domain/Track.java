@@ -4,20 +4,18 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
+
+@Document
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Track {
     @ApiModelProperty(value = "ID of the track")
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int trackId;
     @ApiModelProperty(value = "Name of the track")
     private String trackName;
