@@ -11,5 +11,5 @@ import java.util.List;
     public List<Track> getAllTracks() throws TrackNotFoundException;
     public  Track updateTrackComment(Track track) throws TrackNotFoundException;
     public Track deleteTrack(Track track) throws TrackNotFoundException;
-    public List<Track> getTrackByName(String name) throws TrackNotFoundException;
+
 }

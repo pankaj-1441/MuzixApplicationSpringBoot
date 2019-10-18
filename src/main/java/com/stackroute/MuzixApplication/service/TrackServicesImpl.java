@@ -65,14 +65,7 @@ public class TrackServicesImpl implements TrackServices {
         return track;
     }
 
-    @Override
-    public List<Track> getTrackByName(String name) throws TrackNotFoundException {
-        List<Track> tracks=trackRepository.getTrackByName(name);
-        if(tracks.size()==0){
-            throw new TrackNotFoundException("No track was found");
-        }
-        return tracks;
-    }
+
 
 
 }

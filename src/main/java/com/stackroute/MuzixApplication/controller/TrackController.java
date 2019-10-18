@@ -67,14 +67,4 @@ public class TrackController {
         return  responseEntity;
     }
 
-
-    @ApiOperation(value = "Finds the entered track in the database")
-    @GetMapping("track/{name}")
-    public  ResponseEntity<?> getTrackByName(@PathVariable String name) throws TrackNotFoundException {
-        ResponseEntity responseEntity;
-
-            responseEntity = new ResponseEntity<List<Track>>(trackServices.getTrackByName(name), HttpStatus.OK);
-
-        return responseEntity;
-    }
 }
