@@ -4,7 +4,6 @@ import com.stackroute.MuzixApplication.domain.Track;
 import com.stackroute.MuzixApplication.exceptions.TrackAlreadyExistsException;
 import com.stackroute.MuzixApplication.service.TrackServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
