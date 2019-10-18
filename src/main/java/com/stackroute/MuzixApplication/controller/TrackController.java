@@ -37,7 +37,7 @@ public class TrackController {
 
     @ApiOperation(value = "Finds all the tracks in the database")
     @GetMapping("/get")
-    public  ResponseEntity<?> getAllUsers(){
+    public  ResponseEntity<?> getAllUsers() throws TrackNotFoundException{
         ResponseEntity responseEntity;
 
             responseEntity = new ResponseEntity<List<Track>>(trackServices.getAllTracks(), HttpStatus.OK);

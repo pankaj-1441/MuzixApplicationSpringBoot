@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
 //@Qualifier("trackService")
@@ -35,8 +37,12 @@ public class TrackServicesImpl implements TrackServices {
     }
 
     @Override
-    public List<Track> getAllTracks() {
-        return trackRepository.findAll();
+    public List<Track> getAllTracks() throws TrackNotFoundException {
+        List<Track> tracks=trackRepository.findAll();
+        if(tracks.size()==0){
+            throw new TrackNotFoundException("No tracks were found");
+        }
+        return tracks;
     }
 
     @Override
@@ -51,12 +57,12 @@ public class TrackServicesImpl implements TrackServices {
     }
 
     @Override
-    public void deleteTrack(Track track) throws TrackNotFoundException{
+    public Track deleteTrack(Track track) throws TrackNotFoundException{
         if(!trackRepository.existsById(track.getTrackId())){
             throw new TrackNotFoundException("Track not found to be deleted");
         }
         trackRepository.delete(track);
-
+        return track;
     }
 
     @Override

@@ -50,12 +50,12 @@ public class TrackDummyServiceImpl implements TrackServices{
     }
 
     @Override
-    public void deleteTrack(Track track) throws TrackNotFoundException{
+    public Track deleteTrack(Track track) throws TrackNotFoundException{
         if(!trackRepository.existsById(track.getTrackId())){
             throw new TrackNotFoundException("Track not found to be deleted");
         }
         trackRepository.delete(track);
-
+        return track;
     }
 
     @Override
