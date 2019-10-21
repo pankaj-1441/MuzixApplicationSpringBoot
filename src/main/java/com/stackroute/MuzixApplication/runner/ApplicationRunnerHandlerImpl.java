@@ -1,4 +1,4 @@
-package com.stackroute.MuzixApplication.runner;
+/*package com.stackroute.MuzixApplication.runner;
 
 import com.stackroute.MuzixApplication.domain.Track;
 import com.stackroute.MuzixApplication.service.TrackServices;
@@ -19,7 +19,7 @@ public class ApplicationRunnerHandlerImpl implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Track track=new Track();
-        track.setTrackId(2);
+        track.setTrackId(Integer.parseInt(env.getProperty("Track.trackId")));
         track.setTrackName(env.getProperty("Track.trackName"));
         track.setTrackComments(env.getProperty("Track.trackComments"));
 
@@ -27,3 +27,4 @@ public class ApplicationRunnerHandlerImpl implements ApplicationRunner {
 
     }
 }
+*/
